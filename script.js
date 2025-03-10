@@ -5,19 +5,9 @@ const lPopulation = document.getElementById("Population-label");
 const lRegion = document.getElementById("Region-label");
 const pCountry = document.getElementById("CountryName");
 const fFlag = document.getElementById("flag");
-const errorDiv = document.getElementById("error-message");
+
 const neighborsList = document.getElementById("neighbors-list");
 
-function displayError(message) {
-    errorDiv.textContent = message;
-    errorDiv.style.display = 'block';
-    pCountry.textContent = 'Country';
-    lCapital.textContent = 'Capital:';
-    lPopulation.textContent = 'Population:';
-    lRegion.textContent = 'Region:';
-    fFlag.src = '';
-    neighborsList.innerHTML = '';
-}
 
 function fetchBorderingCountries(borderCodes) {
     if (!borderCodes || borderCodes.length === 0) {
@@ -32,22 +22,22 @@ function fetchBorderingCountries(borderCodes) {
             return response.json();
         })
         .then(data => {
-            neighborsList.innerHTML = ''; // Clear previous
+            neighborsList.innerHTML = ''; // Clear previous data
             data.forEach(country => {
                 const div = document.createElement('div');
                 div.className = 'neighbor-item';
                 div.innerHTML = `
-                    <span>${country.name.common}</span>
+                    <section>${country.name.common}</section>
                     <img src="${country.flags.svg}" alt="${country.name.common} flag" width="80">
                 `;
                 neighborsList.appendChild(div);
             });
         })
-        .catch(err => displayError('Error loading bordering countries'));
+        .catch(err => console.error(error));
 }
 
 myButton.addEventListener('click', function() {
-    errorDiv.style.display = 'none';
+
     const cName = sCountry.value.trim();
     if (!cName) return;
 
@@ -68,5 +58,5 @@ myButton.addEventListener('click', function() {
 
             fetchBorderingCountries(country.borders);
         })
-        .catch(err => displayError(err.message));
+        .catch(err => console.error(error));
 });
