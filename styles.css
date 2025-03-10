@@ -1,0 +1,35 @@
+.Country-info {
+    display: flex;
+    margin-left: 5%;
+    gap: 20px;
+}
+
+.Bordering-countries {
+    margin-left: 5%;
+}
+
+#neighbors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.neighbor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.neighbor-item img {
+    width: 80px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+    display: none;
+}

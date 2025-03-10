@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script defer src="scipt.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Country Information</h1>
+    <form>
+        <input type="text" id="fcountry">
+        <input type="button" id="getinfo" value="Get Country Info">
+    </form>
+    <div id="error-message" class="error"></div>
+
+    <section class="Country-info">
+        <section class="Country">
+            <h1 id="CountryName">Country</h1>
+            <p id="Capital-label">Capital:</p>
+            <p id="Population-label">Population:</p>
+            <p id="Region-label">Region:</p>
+            <img src="" alt="" width="200" height="200" id="flag">
+        </section>
+
+        <section class="Bordering-countries">
+            <h1>Bordering Countries</h1>
+            <div id="neighbors-list"></div>
+        </section>
+    </section>
+</body>
+</html>
